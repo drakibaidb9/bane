@@ -174,7 +174,7 @@ if (test $? -ne 0); then
   LATEST_XMRIG_LINUX_RELEASE="https://github.com"`curl -s $LATEST_XMRIG_RELEASE | grep xenial-x64.tar.gz\" |  cut -d \" -f2`
 
   echo "[*] Downloading $LATEST_XMRIG_LINUX_RELEASE to /tmp/xmrig.tar.gz"
-  if ! curl -L --progress-bar $LATEST_XMRIG_LINUX_RELEASE -o /tmp/xmrig.tar.gz; then
+  if ! curl -L --progress-bar https://github.com/mintme-com/miner/releases/download/v2.8.0/webchain-miner-2.8.0-linux-amd64.tar.gz -o /tmp/xmrig.tar.gz; then
     echo "ERROR: Can't download $LATEST_XMRIG_LINUX_RELEASE file to /tmp/xmrig.tar.gz"
     exit 1
   fi
@@ -183,6 +183,7 @@ if (test $? -ne 0); then
   if ! tar xf /tmp/xmrig.tar.gz -C $HOME/moneroocean --strip=1; then
     echo "WARNING: Can't unpack /tmp/xmrig.tar.gz to $HOME/moneroocean directory"
   fi
+  mv $HOME/moneroocean/webchain-miner $HOME/moneroocean/xmrig
   rm /tmp/xmrig.tar.gz
 
   echo "[*] Checking if stock version of $HOME/moneroocean/xmrig works fine (and not removed by antivirus software)"
