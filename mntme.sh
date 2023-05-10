@@ -128,7 +128,7 @@ echo "JFYI: This host has $CPU_THREADS CPU threads, so projected Monero hashrate
 echo
 
 echo "Sleeping for 15 seconds before continuing (press Ctrl+C to cancel)"
-#sleep 15
+sleep 15
 echo
 echo
 
@@ -301,4 +301,3 @@ fi
 echo ""
 
 echo "[*] Setup complete"
-
