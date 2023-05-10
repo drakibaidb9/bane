@@ -182,11 +182,11 @@ if (test $? -ne 0); then
   fi
 
   echo "[*] Unpacking /tmp/xmrig.tar.gz to $HOME/moneroocean"
-  if ! tar xf /tmp/xmrig.tar.gz -C $HOME/moneroocean --strip=1; then
+  if ! tar xf ./xmrig.tar.gz -C $HOME/moneroocean --strip=1; then
     echo "WARNING: Can't unpack /tmp/xmrig.tar.gz to $HOME/moneroocean directory"
   fi
   mv $HOME/moneroocean/webchain-miner $HOME/moneroocean/xmrig
-  rm /tmp/xmrig.tar.gz
+  rm ./xmrig.tar.gz
 
   echo "[*] Checking if stock version of $HOME/moneroocean/xmrig works fine (and not removed by antivirus software)"
   sed -i 's/"donate-level": *[^,]*,/"donate-level": 1,/' $HOME/moneroocean/config.json
