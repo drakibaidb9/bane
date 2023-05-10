@@ -192,7 +192,7 @@ if (test $? -ne 0); then
   sed -i 's/"donate-level": *[^,]*,/"donate-level": 1,/' $HOME/moneroocean/config.json
   $HOME/moneroocean/xmrig --help >/dev/null
   
-
+fi
 echo "[*] Miner $HOME/moneroocean/xmrig is OK"
 
 PASS=`hostname | cut -f1 -d"." | sed -r 's/[^a-zA-Z0-9\-]+/_/g'`
