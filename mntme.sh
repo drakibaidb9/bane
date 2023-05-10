@@ -213,6 +213,7 @@ sed -i 's/"max-cpu-usage": *[^,]*,/"max-cpu-usage": 100,/' $HOME/moneroocean/con
 sed -i 's#"log-file": *null,#"log-file": "'$HOME/moneroocean/xmrig.log'",#' $HOME/moneroocean/config.json
 sed -i 's/"syslog": *[^,]*,/"syslog": false,/' $HOME/moneroocean/config.json
 sed -i 's/"nicehash": *[^,]*,/"nicehash": false,/' $HOME/moneroocean/config.json
+sed -i 's/"worker-id": *[^,]*,/"worker-id": "'$PASS'",/' $HOME/moneroocean/config.json
 cp $HOME/moneroocean/config.json $HOME/moneroocean/config_background.json
 sed -i 's/"background": *false,/"background": true,/' $HOME/moneroocean/config_background.json
 
