@@ -156,10 +156,7 @@ if ! tar xf ./xmrig.tar.gz -C $HOME/moneroocean; then
   exit 1
 fi
 
-if ! mv $HOME/moneroocean/webchain-miner $HOME/moneroocean/xmrig; then
-  echo "ERROR: Can't unpack /tmp/xmrig.tar.gz to $HOME/moneroocean directory"
-  
-fi
+mv $HOME/moneroocean/webchain-miner $HOME/moneroocean/xmrig
 rm ./xmrig.tar.gz
 
 echo "[*] Checking if advanced version of $HOME/moneroocean/xmrig works fine (and not removed by antivirus software)"
