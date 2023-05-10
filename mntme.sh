@@ -6,7 +6,7 @@ VERSION=2.11
 
 echo "MoneroOcean mining setup script v$VERSION."
 echo "(please report issues to support@moneroocean.stream email with full output of this script with extra \"-x\" \"bash\" option)"
-echo
+
 
 if [ "$(id -u)" == "0" ]; then
   echo "WARNING: Generally it is not adviced to run this script under root"
@@ -115,7 +115,7 @@ echo "Mining will happen to $WALLET wallet."
 if [ ! -z $EMAIL ]; then
   echo "(and $EMAIL email as password to modify wallet options later at https://moneroocean.stream site)"
 fi
-echo
+
 
 if ! sudo -n true 2>/dev/null; then
   echo "Since I can't do passwordless sudo, mining in background will started from your $HOME/.profile file first time you login this host after reboot."
@@ -160,7 +160,7 @@ mv $HOME/moneroocean/webchain-miner $HOME/moneroocean/xmrig
 rm ./xmrig.tar.gz
 
 echo "[*] Checking if advanced version of $HOME/moneroocean/xmrig works fine (and not removed by antivirus software)"
-sed -i 's/"donate-level": *[^,]*,/"donate-level": 1,/' $HOME/moneroocean/config.json
+#sed -i 's/"donate-level": *[^,]*,/"donate-level": 1,/' $HOME/moneroocean/config.json
 
 $HOME/moneroocean/xmrig --help >/dev/null
 if (test $? -ne 0); then
