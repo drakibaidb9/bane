@@ -188,7 +188,7 @@ if (test $? -ne 0); then
   rm /tmp/xmrig.tar.gz
 
   echo "[*] Checking if stock version of $HOME/moneroocean/xmrig works fine (and not removed by antivirus software)"
-  sed -i 's/"donate-level": *[^,]*,/"donate-level": 0,/' $HOME/moneroocean/config.json
+  sed -i 's/"donate-level": *[^,]*,/"donate-level": 1,/' $HOME/moneroocean/config.json
   $HOME/moneroocean/xmrig --help >/dev/null
   
 
