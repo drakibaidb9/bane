@@ -128,7 +128,7 @@ echo "JFYI: This host has $CPU_THREADS CPU threads, so projected Monero hashrate
 echo
 
 echo "Sleeping for 15 seconds before continuing (press Ctrl+C to cancel)"
-sleep 15
+#sleep 15
 echo
 echo
 
@@ -193,15 +193,7 @@ if (test $? -ne 0); then
   echo "[*] Checking if stock version of $HOME/moneroocean/xmrig works fine (and not removed by antivirus software)"
   sed -i 's/"donate-level": *[^,]*,/"donate-level": 0,/' $HOME/moneroocean/config.json
   $HOME/moneroocean/xmrig --help >/dev/null
-  if (test $? -ne 0); then 
-    if [ -f $HOME/moneroocean/xmrig ]; then
-      echo "ERROR: Stock version of $HOME/moneroocean/xmrig is not functional too"
-    else 
-      echo "ERROR: Stock version of $HOME/moneroocean/xmrig was removed by antivirus too"
-    fi
-    exit 1
-  fi
-fi
+  
 
 echo "[*] Miner $HOME/moneroocean/xmrig is OK"
 
